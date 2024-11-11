@@ -1,0 +1,22 @@
+stages:
+  - publish
+
+cache:
+  untracked: true
+  key: $CI_COMMIT_REF_SLUG
+  paths:
+    - node_modules/
+
+publish:
+  stage: publish
+  tags:
+    - shared
+  only:
+    - master
+  cache:
+    paths:
+      - node_modules/
+    policy: pull
+  script:
+    - tyn
+    - bash ./deploy.sh
