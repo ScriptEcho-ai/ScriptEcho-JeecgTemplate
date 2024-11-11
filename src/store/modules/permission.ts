@@ -237,19 +237,6 @@ export const usePermissionStore = defineStore({
               }
             }
             // 两个条件都不满足，就弹出提示框
-            if (!hasIcon && !hasIndex) {
-              // 延迟1.5秒之后再出现提示，否则提示框出不来
-              setTimeout(
-                () =>
-                  createWarningModal({
-                    title: '提示',
-                    content:
-                      '检测到你可能使用了<b>非vue3版本</b>的数据库表，这将会导致菜单或其他功能出现异常，请更换成vue3版本的数据库表后刷新。' +
-                      '<br>文档地址：<a href="http://vue3.jeecg.com/2671576" target="_blank">http://vue3.jeecg.com/2671576</a>',
-                  }),
-                1500
-              );
-            }
             // update-end----author:sunjianlei---date:20220315------for: 判断是否是 vue3 版本的菜单 ---
           } catch (error) {
             console.error(error);
