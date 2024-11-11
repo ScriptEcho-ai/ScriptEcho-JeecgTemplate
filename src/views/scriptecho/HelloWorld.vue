@@ -1,3 +1,3 @@
 <template>
-  <div>Script Echo</div>
+  <div>HelloWorld</div>
 </template>
